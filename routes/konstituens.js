@@ -7,6 +7,8 @@ router.get('/', function(req, res, next) {
       res.render('konstituen/index', {konstituens: konstituens});
    }).catch(err => {
       console.log(err);
-      res.render('konstituens/index');
+      res.render('konstituen/index');
    })
 });
+
+module.exports = router;
