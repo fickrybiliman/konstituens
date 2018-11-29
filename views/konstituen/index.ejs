@@ -4,33 +4,33 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <!-- UIkit CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/css/uikit.min.css" />
-   <link rel="stylesheet" href="../css/uikit.min.css" />   
-   <!-- UIkit JS -->
-   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/js/uikit.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/js/uikit-icons.min.js"></script> -->
-   <script src="../js/uikit.min.js"></script>
-   <script src="../js/uikit-icons.min.js"></script>
+  
+   <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+   <link rel="stylesheet" type="text/css" href="../Semantic-UI-CSS-master/semantic.min.css">
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+   <script src="./Semantic-UI-CSS-master/semantic.min.js"></script>
+  
    <title>Data Konstituen</title>
 </head>
 <body>
    <h1>Data Konstituen</h1>
-   <table class="uk-table uk-table-striped">
+   <table class="ui celled striped table">
       <thead>
           <tr>
-              <th>Nama</th>
-              <th>NIK</th>
-              <th>No HP</th>
-              <th>Alamat</th>
-              <th>Kecamatan</th>
-              <th>Kelurahan</th>
-              <th>TPS</th>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIK</th>
+            <th>No HP</th>
+            <th>Alamat</th>
+            <th>Kecamatan</th>
+            <th>Kelurahan</th>
+            <th>TPS</th>
           </tr>
       </thead>
       <tbody>
          <% for (let i = 0; i < konstituens.length; i++) { %>
             <tr>
+               <td><%= i+1 %></td>
                <td><%= konstituens[i].nama %></td>
                <td><%= konstituens[i].nik %></td>
                <td><%= konstituens[i].hp %></td>
@@ -42,5 +42,6 @@
          <% } %>
       </tbody>
   </table>
+
 </body>
 </html>
