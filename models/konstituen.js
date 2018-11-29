@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Konstituen.associate = function(models) {
     // associations can be defined here
+    Konstituen.belongsTo(sequelize.models.Kecamatan)
   };
   return Konstituen;
 };
