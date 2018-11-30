@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+   <!-- <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css"> -->
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> 
+   <!-- <script src="../Semantic-UI-CSS-master/semantic.min.js"></script> -->
+   <title>Add Data Konstituen</title>
+</head>
+<body>
+   <h1>Tambah Data Konstituen</h1>
+   <a href="/konstituens"><button class="ui blue button">Lihat Data Konstituen</button></a> 
+   <br><hr>
+   <form action="/konstituen/add" method="POST">
+      <div class="ui form">
+         <div class="fields">
+           <div class="five wide field">
+             <label>Nama Konstituen</label>
+             <input type="text" placeholder="Nama">
+           </div>
+           <div class="five wide field">
+             <label>Nomor Induk Kependudukan (NIK)</label>
+             <input type="text" placeholder="NIK">
+           </div>
+           <div class="six wide field">
+             <label>Nomor Handphone</label>
+             <input type="text" placeholder="Nomor Handphone">
+           </div>
+         </div>
+         <div class="fields">
+           <div class="sixteen wide field">
+             <label>Alamat Konstituen</label>
+             <input type="text" placeholder="Alamat">
+           </div>
+         </div>
+         <div class="fields">
+           <div class="seven wide field">
+             <label>Kecamatan</label>
+             <input type="text" placeholder="Kecamatan">
+           </div>
+           <div class="seven wide field">
+             <label>Kelurahan</label>
+             <input type="text" placeholder="Kelurahan">
+           </div>
+           <div class="two wide field">
+             <label>Nomor TPS</label>
+             <input type="text" placeholder="Nomor TPS">
+           </div>
+         </div>
+         <div class="ui submit button">Submit</div>
+       </div>
+   </form>
+</body>
+</html>

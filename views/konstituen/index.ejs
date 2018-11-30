@@ -14,6 +14,7 @@
 </head>
 <body>
    <h1>Data Konstituen</h1>
+   <a href="/konstituens/add"><button class="ui teal button">Tambah Data Konstituen</button></a> 
    <table class="ui small very compact selectable celled striped table">
       <thead>
           <tr>
@@ -25,6 +26,7 @@
             <th>Kecamatan</th>
             <th>Kelurahan</th>
             <th>TPS</th>
+            <th colspan="2">Aksi</th>
           </tr>
       </thead>
       <tbody>
@@ -38,6 +40,8 @@
                <td><%= konstituen[i].Kecamatan.kecamatan %></td>
                <td><%= konstituen[i].Kelurahan.kelurahan %></td>
                <td><%= konstituen[i].tps %></td>
+               <td><i class="edit icon"></i></td>
+               <td><i class="trash icon"></i></td>
             </tr>
          <% } %>
       </tbody>

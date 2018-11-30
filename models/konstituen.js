@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Konstituen.associate = function(models) {
     // associations can be defined here
-    Konstituen.belongsTo(sequelize.models.Kecamatan),
-    Konstituen.belongsTo(sequelize.models.Kelurahan)
+    Konstituen.belongsTo(sequelize.models.Kecamatan, {foreignKey: 'kecamatanID'}),
+    Konstituen.belongsTo(sequelize.models.Kelurahan, {foreignKey: 'kelurahanID'})
   };
   return Konstituen;
 };

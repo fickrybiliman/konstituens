@@ -12,4 +12,8 @@ router.get('/', function(req, res, next) {
    })
 });
 
+router.get('/add', (req, res, next) => {
+   res.render('konstituen/add');
+})
+
 module.exports = router;
