@@ -17,8 +17,8 @@ router.get('/add', (req, res, next) => {
 });
 
 router.post('/add', (req, res, next) => {
-   const {nama, nik, hp, alamat, kecamatan, kelurahan} = req.body;
-   models.Konstituen.create({nama, nik, hp, alamat, kecamatan, kelurahan}).then(konstituen => {
+   const {nama, nik, hp, alamat, kecamatanID, kelurahanID} = req.body;
+   models.Konstituen.create({nama, nik, hp, alamat, kecamatanID, kelurahanID}).then(konstituen => {
       res.redirect('/konstituens');
    }).catch(err => {
       console.log(err);
