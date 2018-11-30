@@ -25,8 +25,8 @@ router.get('/add', (req, res, next) => {
 });
 
 router.post('/add', (req, res, next) => {
-   const {nama, nik, hp, alamat, kecamatanID, kelurahanID} = req.body;
-   models.Konstituen.create({nama, nik, hp, alamat, kecamatanID, kelurahanID}).then(konstituen => {
+   const {nama, nik, hp, alamat, kecamatanID, kelurahanID, tps} = req.body;
+   models.Konstituen.create({nama, nik, hp, alamat, kecamatanID, kelurahanID, tps}).then(konstituen => {
       res.redirect('/konstituens');
    }).catch(err => {
       console.log(err);
@@ -47,7 +47,7 @@ router.get('/edit/:id', (req, res, next) => {
 
 router.post('/edit/:id', (req, res, next) => {
    const konstituenId = req.params.id;
-   const {nama, nik, hp, alamat, kecamatanID, kelurahanID} = req.body;
+   const {nama, nik, hp, alamat, kecamatanID, kelurahanID, tps} = req.body;
    models.Konstituen.findOne({where: {id: konstituenId}}).then(konstituen => {
       return konstituen.update({
          nama,
@@ -55,7 +55,8 @@ router.post('/edit/:id', (req, res, next) => {
          hp,
          alamat,
          kecamatanID,
-         kelurahanID
+         kelurahanID,
+         tps
       })
    }).then(updatedKonstituen => {
       res.redirect('/konstituens');

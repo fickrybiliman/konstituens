@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     hp: DataTypes.STRING,
     alamat: DataTypes.STRING,    // ditambah manual setelah dibikin sequelize migration:generate nya
     kecamatanID: DataTypes.INTEGER,   // ditambah manual setelah dibikin sequelize migration:generate nya
-    kelurahanID: DataTypes.INTEGER    // ditambah manual setelah dibikin sequelize migration:generate nya
+    kelurahanID: DataTypes.INTEGER,   // ditambah manual setelah dibikin sequelize migration:generate nya
+    tps: DataTypes.INTEGER        // ditambah manual setelah dibikin sequelize migration:generate nya 
   }, {});
   Konstituen.associate = function(models) {
     // associations can be defined here
