@@ -15,7 +15,9 @@ router.get('/', function(req, res, next) {
 router.get('/add', (req, res, next) => {
    models.Kecamatan.findAll().then(kecamatans => {
       // console.log(kecamatans)
-      res.render('konstituen/add', {kecamatan: kecamatans});
+      models.Kelurahan.findAll().then(kelurahans => {
+         res.render('konstituen/add', {kecamatan: kecamatans, kelurahan: kelurahans});
+      }) 
    }).catch(err => {
       console.log(err);
       res.render('konstituen/add');
@@ -32,5 +34,47 @@ router.post('/add', (req, res, next) => {
    })
 });
 
+router.get('/edit/:id', (req, res, next) => {
+   const konstituenId = req.params.id;
+   models.Konstituen.findOne({where: {id: konstituenId}}).then(konstituen => {
+      console.log(konstituen)
+      res.render('konstituen/edit', {konstituen: konstituen});
+   }).catch(err => {
+      console.log(err);
+      res.redirect('/konstituens');
+   })
+});
+
+router.post('/edit/:id', (req, res, next) => {
+   const konstituenId = req.params.id;
+   const {nama, nik, hp, alamat, kecamatanID, kelurahanID} = req.body;
+   models.Konstituen.findOne({where: {id: konstituenId}}).then(konstituen => {
+      return konstituen.update({
+         nama,
+         nik,
+         hp,
+         alamat,
+         kecamatanID,
+         kelurahanID
+      })
+   }).then(updatedKonstituen => {
+      res.redirect('/konstituens');
+   }).catch(err => {
+      console.log(err);
+      res.redirect('/konstituens');
+   })
+});
+
+router.get('/delete/:id', (req, res, next) => {
+   const konstituenId = req.params.id;
+   models.Konstituen.findOne({where: {id: konstituenId}}).then(konstituen => {
+      return konstituen.destroy();
+   }).then(konstituen => {
+      res.redirect('/konstituens');
+   }).catch(err => {
+      console.log(err);
+      res.redirect('/konstituens');
+   })
+});
 
 module.exports = router;

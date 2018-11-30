@@ -40,8 +40,16 @@
                <td><%= konstituen[i].Kecamatan.kecamatan %></td>
                <td><%= konstituen[i].Kelurahan.kelurahan %></td>
                <td><%= konstituen[i].tps %></td>
-               <td><i class="edit icon"></i></td>
-               <td><i class="trash icon"></i></td>
+               <td>
+                  <a href="/konstituens/edit/<%=konstituen[i].id %>" data-tooltip="Edit">
+                     <i class="edit icon"></i>
+                  </a>
+               </td>
+               <td>
+                  <a href="/konstituens/delete/<%=konstituen[i].id %>" onclick="return confirm('are u sure?')" data-tooltip="Delete">
+                     <i class="trash icon"></i>
+                  </a>
+               </td>              
             </tr>
          <% } %>
       </tbody>

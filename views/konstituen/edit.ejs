@@ -9,56 +9,43 @@
    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> 
    <!-- <script src="../Semantic-UI-CSS-master/semantic.min.js"></script> -->
-   <title>Add Data Konstituen</title>
+  
+   <title>Edit Data Konstituen</title>
 </head>
 <body>
-   <h1>Tambah Data Konstituen</h1>
+   <h1>Edit Data Konstituen</h1>
    <a href="/konstituens"><button class="ui blue button">Lihat Data Konstituen</button></a> 
    <br></br>
-   <form action="/konstituens/add" method="POST">
+   <form action="/konstituens/edit/<%= konstituen.id %>" method="POST">
       <div class="ui form">
          <div class="fields">
            <div class="five wide field">
              <label>Nama Konstituen</label>
-             <input type="text" name="nama" placeholder="Nama">
+             <input type="text" name="nama" value="<%= konstituen.nama %>">
            </div>
            <div class="five wide field">
              <label>Nomor Induk Kependudukan (NIK)</label>
-             <input type="text" name="nik" placeholder="NIK">
+             <input type="text" name="nik" value="<%= konstituen.nik %>">
            </div>
            <div class="six wide field">
              <label>Nomor Handphone</label>
-             <input type="text" name="hp" placeholder="Nomor Handphone">
+             <input type="text" name="hp" value="<%= konstituen.hp %>">
            </div>
          </div>
          <div class="fields">
            <div class="sixteen wide field">
              <label>Alamat Konstituen</label>
-             <input type="text" name="alamat" placeholder="Alamat">
+             <input type="text" name="alamat" value="<%= konstituen.alamat %>">
            </div>
          </div>
          <div class="fields">
            <div class="seven wide field">
              <label>Kecamatan</label>
-             <!-- <input type="text" name="kecamatanID" placeholder="Kecamatan"> -->
-             <select class="ui fluid selection dropdown" name="kecamatanID">
-               <span class="text">Pilih Kecamatan</span>
-               <div class="menu"></div>
-               <% for (let i = 0; i < kecamatan.length; i++) { %>
-                  <option value="<%= kecamatan[i].id %>"><%= kecamatan[i].kecamatan %></option>     
-               <% } %>        
-             </select>        
+             <input type="text" name="kecamatanID" value="<%= konstituen.kecamatanID %>">
            </div>
            <div class="seven wide field">
              <label>Kelurahan</label>
-             <!-- <input type="text" name="kelurahanID" placeholder="Kelurahan"> -->
-             <select class="ui fluid selection dropdown" name="kelurahanID">
-               <span class="text">Pilih Kelurahan</span>
-               <div class="menu"></div>
-               <% for (let i = 0; i < kelurahan.length; i++) { %>
-                  <option value="<%= kelurahan[i].id %>"><%= kelurahan[i].kelurahan %></option>     
-               <% } %>        
-             </select> 
+             <input type="text" name="kelurahanID" value="<%= konstituen.kelurahanID %>">
            </div>
            <!-- <div class="two wide field">
              <label>Nomor TPS</label>
@@ -67,6 +54,6 @@
          </div>
          <button type="submit" class="ui pink button">Submit</button>
        </div>
-   </form>
+    </form>
 </body>
 </html>
