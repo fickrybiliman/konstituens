@@ -15,43 +15,43 @@
    <h1>Tambah Data Konstituen</h1>
    <a href="/konstituens"><button class="ui blue button">Lihat Data Konstituen</button></a> 
    <br><hr>
-   <form action="/konstituen/add" method="POST">
+   <form action="/konstituens/add" method="POST">
       <div class="ui form">
          <div class="fields">
            <div class="five wide field">
              <label>Nama Konstituen</label>
-             <input type="text" placeholder="Nama">
+             <input type="text" name="nama" placeholder="Nama">
            </div>
            <div class="five wide field">
              <label>Nomor Induk Kependudukan (NIK)</label>
-             <input type="text" placeholder="NIK">
+             <input type="text" name="nik" placeholder="NIK">
            </div>
            <div class="six wide field">
              <label>Nomor Handphone</label>
-             <input type="text" placeholder="Nomor Handphone">
+             <input type="text" name="hp" placeholder="Nomor Handphone">
            </div>
          </div>
          <div class="fields">
            <div class="sixteen wide field">
              <label>Alamat Konstituen</label>
-             <input type="text" placeholder="Alamat">
+             <input type="text" name="alamat" placeholder="Alamat">
            </div>
          </div>
          <div class="fields">
            <div class="seven wide field">
              <label>Kecamatan</label>
-             <input type="text" placeholder="Kecamatan">
+             <input type="text" name="kecamatan" placeholder="Kecamatan">
            </div>
            <div class="seven wide field">
              <label>Kelurahan</label>
-             <input type="text" placeholder="Kelurahan">
+             <input type="text" name="kelurahan" placeholder="Kelurahan">
            </div>
-           <div class="two wide field">
+           <!-- <div class="two wide field">
              <label>Nomor TPS</label>
-             <input type="text" placeholder="Nomor TPS">
-           </div>
+             <input type="text" name="tps" placeholder="Nomor TPS">
+           </div> -->
          </div>
-         <div class="ui submit button">Submit</div>
+         <button type="submit" class="ui pink button">Submit</button>
        </div>
    </form>
 </body>

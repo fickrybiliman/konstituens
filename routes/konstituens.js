@@ -14,6 +14,17 @@ router.get('/', function(req, res, next) {
 
 router.get('/add', (req, res, next) => {
    res.render('konstituen/add');
-})
+});
+
+router.post('/add', (req, res, next) => {
+   const {nama, nik, hp, alamat, kecamatan, kelurahan} = req.body;
+   models.Konstituen.create({nama, nik, hp, alamat, kecamatan, kelurahan}).then(konstituen => {
+      res.redirect('/konstituens');
+   }).catch(err => {
+      console.log(err);
+      res.redirect('/konstituens');
+   })
+});
+
 
 module.exports = router;
