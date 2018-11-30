@@ -40,7 +40,14 @@
          <div class="fields">
            <div class="seven wide field">
              <label>Kecamatan</label>
-             <input type="text" name="kecamatanID" placeholder="Kecamatan">
+             <!-- <input type="text" name="kecamatanID" placeholder="Kecamatan"> -->
+             <select class="ui fluid selection dropdown" name="kecamatanID">
+               <span class="text">Pilih Kecamatan</span>
+               <div class="menu"></div>
+               <% for (let i = 0; i < kecamatan.length; i++) { %>
+                  <option value="<%= kecamatan[i].id %>"><%= kecamatan[i].kecamatan %></option>     
+               <% } %>        
+             </select>        
            </div>
            <div class="seven wide field">
              <label>Kelurahan</label>

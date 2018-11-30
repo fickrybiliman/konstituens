@@ -4,7 +4,7 @@ const models = require('../models');
 
 router.get('/', function(req, res, next) {
    models.Konstituen.findAll({include: [{model: models.Kecamatan}, {model: models.Kelurahan}]}).then(konstituens => {
-      console.log(konstituens)
+      // console.log(konstituens)
       res.render('konstituen/index', {konstituen: konstituens});
    }).catch(err => {
       console.log(err);
@@ -13,7 +13,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/add', (req, res, next) => {
-   res.render('konstituen/add');
+   models.Kecamatan.findAll().then(kecamatans => {
+      // console.log(kecamatans)
+      res.render('konstituen/add', {kecamatan: kecamatans});
+   }).catch(err => {
+      console.log(err);
+      res.render('konstituen/add');
+   })
 });
 
 router.post('/add', (req, res, next) => {
