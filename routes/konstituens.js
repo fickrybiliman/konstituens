@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 const models = require('../models');
 
-router.get('/', function(req, res, next) {
+//middlewares for check express-session
+const { checkAuthSession } = require('../middlewares/auth');
+
+router.get('/', checkAuthSession, function(req, res, next) {
    models.Konstituen.findAll({include: [{model: models.Kecamatan}, {model: models.Kelurahan}]}).then(konstituens => {
       // console.log(konstituens)
       res.render('konstituen/index', {konstituen: konstituens});

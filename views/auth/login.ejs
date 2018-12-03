@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+   <!-- <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css"> -->
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> 
+   <!-- <script src="../Semantic-UI-CSS-master/semantic.min.js"></script> -->
+   <title>Login Page</title>
+</head>
+<body>
+   <div class="page-login">
+      <div class="ui centered grid container">
+        <div class="nine wide column">
+          <div class="ui icon warning message">
+              <i class="user secret icon"></i>
+              <div class="content">
+                <div class="header">
+                  Login Form
+                </div>
+                <p>Enter your Username and Password!</p>
+              </div>
+            </div>
+          <div class="ui fluid card">
+            <div class="content">
+            <form action="/users/login" class="ui form" method="POST">
+              <div class="field">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Username">
+              </div>
+              <div class="field">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Password">
+              </div>
+              <button class="ui primary labeled icon button" type="submit">
+                <i class="unlock alternate icon"></i>
+                Login
+              </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+
