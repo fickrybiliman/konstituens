@@ -13,10 +13,44 @@
    <title>Data Konstituen</title>
 </head>
 <body>
-   <h1>Data Konstituen <span><a href="/users/logout"><button class="ui red button">Logout</button></a> </span> </h1>
-   <a href="/konstituens/add"><button class="ui teal button">Tambah Data Konstituen</button></a> 
-   <a href="#"><button class="ui violet button">Lihat Data Konstituen Per Kecamatan</button></a> 
-   <a href="#"><button class="ui pink button">Lihat Data Konstituen Per Kelurahan</button></a> 
+   <div class="ui grid">
+      <div class="four wide column">
+         <h1>Data Konstituen</h1>
+      </div>
+      <div class="seven wide column"></div>
+      <div class="three wide column"></div>
+      <div class="two wide column">
+         <a href="/users/logout"><button class="ui red button">Logout</button></a>
+      </div>
+   </div>
+   
+   <div class="ui grid">
+      <div class="two wide column">
+         <a href="/konstituens/add"><button class="ui teal button">Tambah Data Konstituen</button></a> 
+      </div>
+      <div class="three wide column">
+         <div class="ui dropdown violet button">Lihat Data Konstituen Per Kecamatan<i class="dropdown icon"></i>
+            <div class="menu">
+               <div class="item">Pontianak Kota</div>
+               <div class="item">Pontianak Barat</div>
+               <div class="item">Pontianak Selatan</div>
+             </div>
+         </div>
+      </div>
+      <div class="three wide column">
+         <div class="ui dropdown pink button">Lihat Data Konstituen Per Kelurahan<i class="dropdown icon"></i>
+            <div class="menu">
+               <div class="item">Darat Sekip</div>
+               <div class="item">Mariana</div>
+               <div class="item">Sungai Bangkong</div>
+            </div>
+         </div>
+      </div>
+      <div class="three wide column"></div>
+      <div class="three wide column"></div>
+      <div class="two wide column"></div>
+   </div>
+   
    <table class="ui small very compact selectable celled striped table">
       <thead>
           <tr>
@@ -57,5 +91,8 @@
       </tbody>
   </table>
 
+  <script>
+      $('.ui.dropdown').dropdown();
+   </script>
 </body>
 </html>
