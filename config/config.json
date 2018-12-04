@@ -15,11 +15,6 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "fickry",
-    "password": "biliman",
-    "database": "konstituen",
-    "host": "127.0.0.1",
-    "port": "5432",
-    "dialect": "postgres"
+    "use_env_variable" : "postgres://gycyqkcuxearlg:2ecee8db8d3e9b5f1e125c2d7f7b86404c1c3cb59bcd31e1f76c5527af14da36@ec2-54-235-156-60.compute-1.amazonaws.com:5432/d5jlr9ccj7cpk7"
   }
 }
