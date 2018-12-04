@@ -39,13 +39,13 @@ router.post('/add', (req, res, next) => {
 
 router.get('/edit/:id', (req, res, next) => {
    const konstituenId = req.params.id;
-   // models.Kecamatan.findAll().then(kecamatans => {
-      // models.Kelurahan.findAll().then(kelurahans => {
-   models.Konstituen.findOne({where: {id: konstituenId}}).then(konstituen => { 
-      console.log(konstituen)
-      res.render('konstituen/edit', {konstituen: konstituen});
-         // })
-      // })
+   models.Kecamatan.findAll().then(kecamatans => {
+      models.Kelurahan.findAll().then(kelurahans => {
+         models.Konstituen.findOne({where: {id: konstituenId}}).then(konstituen => { 
+            // console.log(kelurahans)
+            res.render('konstituen/edit', {konstituen: konstituen, kecamatan: kecamatans, kelurahan: kelurahans});
+         })
+      })
    }).catch(err => {
       console.log(err);
       res.redirect('/konstituens');

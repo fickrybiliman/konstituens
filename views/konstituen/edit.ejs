@@ -41,11 +41,33 @@
          <div class="fields">
            <div class="seven wide field">
              <label>Kecamatan</label>
-             <input type="text" name="kecamatanID" value="<%= konstituen.kecamatanID %>">
+             <!-- <input type="text" name="kecamatanID" value="<%= konstituen.kecamatanID %>"> -->
+             <select class="ui fluid selection dropdown" name="kecamatanID">
+               <div class="menu"></div>
+               <% const konstituenKecamatan = konstituen.kecamatanID %>
+               <% for (let i = 0; i < kecamatan.length; i++) { %>
+                  <% if (kecamatan[i].id === konstituenKecamatan) { %>
+                     <option value="<%= kecamatan[i].id %>" selected><%= kecamatan[i].kecamatan %></option>
+                  <% } else { %>
+                     <option value="<%= kecamatan[i].id %>"><%= kecamatan[i].kecamatan %></option>
+                  <% } %>
+               <% } %>        
+              </select>
            </div>
            <div class="seven wide field">
              <label>Kelurahan</label>
-             <input type="text" name="kelurahanID" value="<%= konstituen.kelurahanID %>">
+             <!-- <input type="text" name="kelurahanID" value="<%= konstituen.kelurahanID %>"> -->
+             <select class="ui fluid selection dropdown" name="kelurahanID">
+                  <div class="menu"></div>
+                  <% const konstituenKelurahan = konstituen.kelurahanID %>
+                  <% for (let i = 0; i < kelurahan.length; i++) { %>
+                     <% if (kelurahan[i].id === konstituenKelurahan) { %>
+                        <option value="<%= kelurahan[i].id %>" selected><%= kelurahan[i].kelurahan %></option>
+                     <% } else { %>
+                        <option value="<%= kelurahan[i].id %>"><%= kelurahan[i].kelurahan %></option>
+                     <% } %>
+                  <% } %>        
+                 </select>
            </div>
            <div class="two wide field">
              <label>Nomor TPS</label>
