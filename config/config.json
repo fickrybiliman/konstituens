@@ -15,10 +15,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "fickry",
-    "password": "biliman",
-    "database": "konstituen",
-    "host": "127.0.0.1",
+    "username": "cwdpzzeaimqyhl",
+    "password": "87be650a2d80e938a08b760d777a6953cf4fd6690895548bea7e4feb2e60a1cf",
+    "database": "dapcshse9b2nos host=ec2-54-197-249-140.compute-1.amazonaws.com",
+    "host": "postgres://cwdpzzeaimqyhl:87be650a2d80e938a08b760d777a6953cf4fd6690895548bea7e4feb2e60a1cf@ec2-54-197-249-140.compute-1.amazonaws.com:5432/dapcshse9b2nos",
     "port": "5432",
     "dialect": "postgres"
   }
