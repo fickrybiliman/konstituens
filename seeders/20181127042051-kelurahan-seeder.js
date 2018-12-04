@@ -13,119 +13,119 @@ module.exports = {
       }], {});
     */
     return queryInterface.bulkInsert('Kelurahans', [{
-      kelurahan: 'DARAT SEKIP',
+      kelurahan: 'Darat Sekip',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'MARIANA',
+      kelurahan: 'Mariana',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'SUNGAI BANGKONG',
+      kelurahan: 'Sungai Bangkong',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'SUNGAI JAWI',
+      kelurahan: 'Sungai Jawi',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'TENGAH',
+      kelurahan: 'Tengah',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'PAL LIMA',
+      kelurahan: 'Pal Lima',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'SUNGAI BELIUNG',
+      kelurahan: 'Sungai Beliung',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'SUNGAI JAWI DALAM',
+      kelurahan: 'Sungai Jawi Dalam',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'SUNGAI JAWI LUAR',
+      kelurahan: 'Sungai Jawi Luar',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'AKCAYA',
+      kelurahan: 'Akcaya',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'BENUA MELAYU DARAT',
+      kelurahan: 'Benua Melayu Darat',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'BENUA MELAYU LAUT',
+      kelurahan: 'Benu Melayu Laut',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'KOTA BARU',
+      kelurahan: 'Kota Baru',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'PARIT TOKAYA',
+      kelurahan: 'Parit Tokaya',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'BANGKA BELITUNG DARAT',
+      kelurahan: 'Bangka Belitung Darat',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'BANGKA BELITUNG LAUT',
+      kelurahan: 'Bangka Belitung Laut',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'BANSIR DARAT',
+      kelurahan: 'Bansir Darat',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'BANSIR LAUT',
+      kelurahan: 'Bansir Laut',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'BANJAR SERASAN',
+      kelurahan: 'Banjar Serasan',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'DALAM BUGIS',
+      kelurahan: 'Dalam Bugis',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'PARIT MAYOR',
+      kelurahan: 'Parit Mayor',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'SAIGON',
+      kelurahan: 'Saigon',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'TAMBELAN SAMPIT',
+      kelurahan: 'Tambelan Sampit',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'TANJUNG HILIR',
+      kelurahan: 'Tanjung Hilir',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'TANJUNG HULU',
+      kelurahan: 'Tanjung Hulu',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'BATU LAYANG',
+      kelurahan: 'Batu Layang',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'SIANTAN HILIR',
+      kelurahan: 'Siantan Hilir',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'SIANTAN HULU',
+      kelurahan: 'Siantan Hulu',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kelurahan: 'SIANTAN TENGAH',
+      kelurahan: 'Siantan Tengah',
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});

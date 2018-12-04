@@ -13,27 +13,27 @@ module.exports = {
       }], {});
     */
     return queryInterface.bulkInsert('Kecamatans', [{
-      kecamatan: 'PONTIANAK KOTA',
+      kecamatan: 'Pontianak Kota',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kecamatan: 'PONTIANAK BARAT',
+      kecamatan: 'Pontianak Barat',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kecamatan: 'PONTIANAK SELATAN',
+      kecamatan: 'Pontianak Selatan',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kecamatan: 'PONTIANAK TENGGARA',
+      kecamatan: 'Pontianak Tenggara',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kecamatan: 'PONTIANAK TIMUR',
+      kecamatan: 'Pontianak Timur',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      kecamatan: 'PONTIANAK UTARA',
+      kecamatan: 'Pontianak Utara',
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});
