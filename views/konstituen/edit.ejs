@@ -71,7 +71,18 @@
            </div>
            <div class="two wide field">
              <label>Nomor TPS</label>
-             <input type="text" name="tps" value="<%= konstituen.tps %>">
+             <!-- <input type="text" name="tps" value="<%= konstituen.tps %>"> -->
+             <select class="ui search dropdown" name="tps">
+                  <!-- <option value="">Nomor TPS</option> -->
+               <% const konstituenTps = konstituen.tps %>
+               <% for (let i = 1; i <= 190; i++) { %>
+                  <% if (i === konstituenTps) { %> 
+                     <option value="<%= i %>" selected><%= i %></option>
+                  <% } else { %>
+                     <option value="<%= i %>"><%= i %></option>
+                  <% } %>
+               <% } %>
+              </select>
            </div>
          </div>
          <button type="submit" class="ui pink button">Submit</button>
