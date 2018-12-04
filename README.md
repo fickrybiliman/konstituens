@@ -19,3 +19,6 @@ npm install express-session
 
 ## Aplikasi untuk input data pemilih calon legislatif
 ### Sehingga caleg dapat mengetahui atau mengukur berapa jumlah pemilih nya berdasarkan ktp yang diberikan
+
+Script start di package.json untuk local : "start": "node ./bin/www"
+Script start di package.json untuk heroku : "start": "node app.js"
