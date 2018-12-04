@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"      // Untuk deploy ke heroku pake script yang ini, ini Ori nya "start": "node ./bin/www"
+    "start": "node app.js"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
@@ -21,3 +21,6 @@
     "serve-favicon": "~2.4.2"
   }
 }
+
+
+//"start": "node ./bin/www"
