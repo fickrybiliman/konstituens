@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+   <!-- <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css"> -->
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> 
+   <!-- <script src="../Semantic-UI-CSS-master/semantic.min.js"></script> -->
+  
+   <title>Data Konstituen Per Kelurahan <%= namaKelurahan.kelurahan %></title>
+</head>
+<body>
+   <div class="ui grid">
+      <div class="eleven wide column">
+         <h1>Data Konstituen Kelurahan <%= namaKelurahan.kelurahan %></h1>
+      </div>
+      <div class="three wide column"></div>
+      <div class="two wide column">
+         <a href="/users/logout"><button class="ui red button">Logout</button></a>
+      </div>
+   </div>
+   
+   <div class="ui grid">
+      <div class="two wide column">
+         <a href="/konstituens/add"><button class="ui teal button">Tambah Data Konstituen</button></a> 
+      </div>
+      <div class="three wide column">
+         <div class="ui dropdown violet button">Lihat Data Konstituen Per Kecamatan<i class="dropdown icon"></i>
+            <div class="menu">
+               <div class="item">
+                  <a href="/konstituens">Semua Kecamatan</a> 
+               </div>
+               <% for (let i = 0; i < kecamatan.length; i++) { %>
+                  <div class="item">
+                     <a href="/konstituens/viewPerKecamatan/<%= kecamatan[i].id %>"><%= kecamatan[i].kecamatan %></a> 
+                  </div>
+               <% } %>
+             </div>
+         </div>
+      </div>
+      <div class="three wide column">
+         <div class="ui search dropdown pink button">Lihat Data Konstituen Per Kelurahan<i class="dropdown icon"></i>
+            <div class="menu">
+               <div class="item">
+                     <a href="/konstituens">Semua Kelurahan</a> 
+               </div>
+               <% for (let i = 0; i < kelurahan.length; i++) { %>
+               <div class="item">
+                  <a href="/konstituens/viewPerKelurahan/<%= kelurahan[i].id %>"><%= kelurahan[i].kelurahan %></a> 
+               </div>
+               <% } %>
+            </div>
+         </div>
+      </div>
+      <div class="three wide column"></div>
+      <div class="three wide column"></div>
+      <div class="two wide column"></div>
+   </div>
+   
+   <table class="ui small very compact selectable celled striped table">
+      <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIK</th>
+            <th>No HP</th>
+            <th>Alamat</th>
+            <th>Kecamatan</th>
+            <th>Kelurahan</th>
+            <th>TPS</th>
+            <th colspan="2">Aksi</th>
+          </tr>
+      </thead>
+      <tbody>
+         <% for (let i = 0; i < konstituen.length; i++) { %>
+            <tr>
+               <td><%= i+1 %></td>
+               <td><%= konstituen[i].nama %></td>
+               <td><%= konstituen[i].nik %></td>
+               <td><%= konstituen[i].hp %></td>
+               <td><%= konstituen[i].alamat %></td>
+               <td><%= konstituen[i].Kecamatan.kecamatan %></td>
+               <td><%= konstituen[i].Kelurahan.kelurahan %></td>
+               <td><%= konstituen[i].tps %></td>
+               <td>
+                  <a href="/konstituens/edit/<%=konstituen[i].id %>" data-tooltip="Edit">
+                     <i class="edit icon"></i>
+                  </a>
+               </td>
+               <td>
+                  <a href="/konstituens/delete/<%=konstituen[i].id %>" onclick="return confirm('are u sure?')" data-tooltip="Delete">
+                     <i class="trash icon"></i>
+                  </a>
+               </td>              
+            </tr>
+         <% } %>
+      </tbody>
+  </table>
+
+  <script>
+      $('.ui.dropdown').dropdown();
+   </script>
+</body>
+</html>

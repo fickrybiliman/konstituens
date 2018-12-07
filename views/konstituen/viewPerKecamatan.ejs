@@ -42,11 +42,16 @@
          </div>
       </div>
       <div class="three wide column">
-         <div class="ui dropdown pink button">Lihat Data Konstituen Per Kelurahan<i class="dropdown icon"></i>
+         <div class="ui search dropdown pink button">Lihat Data Konstituen Per Kelurahan<i class="dropdown icon"></i>
             <div class="menu">
-               <div class="item">Darat Sekip</div>
-               <div class="item">Mariana</div>
-               <div class="item">Sungai Bangkong</div>
+               <div class="item">
+                     <a href="/konstituens">Semua Kelurahan</a> 
+               </div>
+               <% for (let i = 0; i < kelurahan.length; i++) { %>
+               <div class="item">
+                  <a href="/konstituens/viewPerKelurahan/<%= kelurahan[i].id %>"><%= kelurahan[i].kelurahan %></a> 
+               </div>
+               <% } %>
             </div>
          </div>
       </div>

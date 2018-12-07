@@ -9,7 +9,9 @@ router.get('/', checkAuthSession, function(req, res, next) {
    models.Konstituen.findAll({include: [{model: models.Kecamatan}, {model: models.Kelurahan}]}).then(konstituens => {
       // console.log(konstituens)
       models.Kecamatan.findAll().then(kecamatans => {
-         res.render('konstituen/index', {konstituen: konstituens, kecamatan: kecamatans});
+         models.Kelurahan.findAll().then(kelurahans => {
+            res.render('konstituen/index', {konstituen: konstituens, kecamatan: kecamatans, kelurahan: kelurahans});
+         })
       })
    }).catch(err => {
       console.log(err);
@@ -28,7 +30,31 @@ router.get('/viewPerKecamatan/:id', (req, res, next) => {
       models.Kecamatan.findAll().then(kecamatans => {
          // console.log(kecamatans)
          models.Kecamatan.findOne({where: {id: kecamatanId}}).then(namaKecamatan => {
-            res.render('konstituen/viewPerKecamatan', {konstituen: konstituens, kecamatan: kecamatans, namaKecamatan: namaKecamatan});
+            models.Kelurahan.findAll().then(kelurahans => {
+               res.render('konstituen/viewPerKecamatan', {konstituen: konstituens, kecamatan: kecamatans, namaKecamatan: namaKecamatan, kelurahan: kelurahans});
+            })
+         })
+      })
+   }).catch(err => {
+      console.log(err);
+      res.render('konstituen/index');
+   })
+});
+
+router.get('/viewPerKelurahan/:id', (req, res, next) => {
+   const kelurahanId = req.params.id;
+   models.Konstituen.findAll({
+      include: [{model: models.Kecamatan}, 
+                {model: models.Kelurahan}],
+      where: {kelurahanID: kelurahanId}
+   }).then(konstituens => {
+      // console.log(konstituens)
+      models.Kelurahan.findAll().then(kelurahans => {
+         // console.log(kecamatans)
+         models.Kelurahan.findOne({where: {id: kelurahanId}}).then(namaKelurahan => {
+            models.Kecamatan.findAll().then(kecamatans => {
+               res.render('konstituen/viewPerKelurahan', {konstituen: konstituens, kelurahan: kelurahans, namaKelurahan: namaKelurahan, kecamatan: kecamatans});
+            })
          })
       })
    }).catch(err => {
