@@ -10,14 +10,13 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> 
    <!-- <script src="../Semantic-UI-CSS-master/semantic.min.js"></script> -->
   
-   <title>Data Konstituen</title>
+   <title>Data Konstituen Per Kecamatan <%= namaKecamatan.kecamatan %></title>
 </head>
 <body>
    <div class="ui grid">
-      <div class="four wide column">
-         <h1>Data Konstituen</h1>
+      <div class="eleven wide column">
+         <h1>Data Konstituen Kecamatan <%= namaKecamatan.kecamatan %></h1>
       </div>
-      <div class="seven wide column"></div>
       <div class="three wide column"></div>
       <div class="two wide column">
          <a href="/users/logout"><button class="ui red button">Logout</button></a>
@@ -31,14 +30,14 @@
       <div class="three wide column">
          <div class="ui dropdown violet button">Lihat Data Konstituen Per Kecamatan<i class="dropdown icon"></i>
             <div class="menu">
-               <!-- <div class="item">
-                  <a href="/konstituens/index"></a> Semua Kecamatan
-               </div> -->
-               <% for (let i = 0; i < kecamatan.length; i++) { %>
                <div class="item">
-                  <a href="/konstituens/viewPerKecamatan/<%= kecamatan[i].id %>"><%= kecamatan[i].kecamatan %></a> 
+                  <a href="/konstituens">Semua Kecamatan</a> 
                </div>
-               <% } %>
+               <% for (let i = 0; i < kecamatan.length; i++) { %>
+                  <div class="item">
+                     <a href="/konstituens/viewPerKecamatan/<%= kecamatan[i].id %>"><%= kecamatan[i].kecamatan %></a> 
+                  </div>
+                  <% } %>
              </div>
          </div>
       </div>

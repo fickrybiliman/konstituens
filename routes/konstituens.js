@@ -8,14 +8,36 @@ const { checkAuthSession } = require('../middlewares/auth');
 router.get('/', checkAuthSession, function(req, res, next) {
    models.Konstituen.findAll({include: [{model: models.Kecamatan}, {model: models.Kelurahan}]}).then(konstituens => {
       // console.log(konstituens)
-      res.render('konstituen/index', {konstituen: konstituens});
+      models.Kecamatan.findAll().then(kecamatans => {
+         res.render('konstituen/index', {konstituen: konstituens, kecamatan: kecamatans});
+      })
    }).catch(err => {
       console.log(err);
       res.render('konstituen/index');
    })
 });
 
-router.get('/add', (req, res, next) => {
+router.get('/viewPerKecamatan/:id', (req, res, next) => {
+   const kecamatanId = req.params.id;
+   models.Konstituen.findAll({
+      include: [{model: models.Kecamatan}, 
+                {model: models.Kelurahan}],
+      where: {kecamatanID: kecamatanId}
+   }).then(konstituens => {
+      // console.log(konstituens)
+      models.Kecamatan.findAll().then(kecamatans => {
+         // console.log(kecamatans)
+         models.Kecamatan.findOne({where: {id: kecamatanId}}).then(namaKecamatan => {
+            res.render('konstituen/viewPerKecamatan', {konstituen: konstituens, kecamatan: kecamatans, namaKecamatan: namaKecamatan});
+         })
+      })
+   }).catch(err => {
+      console.log(err);
+      res.render('konstituen/index');
+   })
+});
+
+router.get('/add', checkAuthSession, (req, res, next) => {
    models.Kecamatan.findAll().then(kecamatans => {
       // console.log(kecamatans)
       models.Kelurahan.findAll().then(kelurahans => {
@@ -27,7 +49,7 @@ router.get('/add', (req, res, next) => {
    })
 });
 
-router.post('/add', (req, res, next) => {
+router.post('/add', checkAuthSession, (req, res, next) => {
    const {nama, nik, hp, alamat, kecamatanID, kelurahanID, tps} = req.body;
    models.Konstituen.create({nama, nik, hp, alamat, kecamatanID, kelurahanID, tps}).then(konstituen => {
       res.redirect('/konstituens');
@@ -37,7 +59,7 @@ router.post('/add', (req, res, next) => {
    })
 });
 
-router.get('/edit/:id', (req, res, next) => {
+router.get('/edit/:id', checkAuthSession, (req, res, next) => {
    const konstituenId = req.params.id;
    models.Kecamatan.findAll().then(kecamatans => {
       models.Kelurahan.findAll().then(kelurahans => {
@@ -73,7 +95,7 @@ router.post('/edit/:id', (req, res, next) => {
    })
 });
 
-router.get('/delete/:id', (req, res, next) => {
+router.get('/delete/:id', checkAuthSession, (req, res, next) => {
    const konstituenId = req.params.id;
    models.Konstituen.findOne({where: {id: konstituenId}}).then(konstituen => {
       return konstituen.destroy();
