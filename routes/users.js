@@ -4,8 +4,11 @@ var router = express.Router();
 const models = require('../models');
 const bcrypt = require('bcrypt');
 
+//middlewares for check express-session
+const { checkAuthSession } = require('../middlewares/auth');
+
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', checkAuthSession, function(req, res, next) {
    models.User.findAll().then(users => {
       // console.log(users);
       res.render('auth/index', {user: users});
