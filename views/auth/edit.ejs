@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+   <!-- <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css"> -->
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> 
+   <!-- <script src="../Semantic-UI-CSS-master/semantic.min.js"></script> -->
+   <title>Edit Data User</title>
+</head>
+<body>
+   <h1>Edit Data User</h1>
+   <a href="/users"><button class="ui blue button">Lihat Data User</button></a> 
+   <br></br>
+   <form action="/users/edit/<%= user.id %>" method="POST">
+      <div class="ui form">
+         <div class="fields">
+           <div class="five wide field">
+             <label>Username</label>
+             <input type="text" name="username" value="<%= user.username %>">
+           </div>
+         </div>
+         <div class="fields">
+            <div class="five wide field">
+               <label>Password</label>
+               <input type="text" name="password" value="<%= user.password %>">
+             </div>
+         </div>
+         <button type="submit" class="ui pink button">Submit</button>
+       </div>
+   </form>
+</body>
+</html>
