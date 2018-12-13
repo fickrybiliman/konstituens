@@ -89,7 +89,8 @@ router.get('/edit/:id', (req, res, next) => {
 
 router.post('/edit/:id', (req, res, next) => {
    const userId = req.params.id;
-   const {username, password} = req.body;
+   let {username, password} = req.body;
+   password = bcrypt.hashSync(password, 7);
    models.User.findOne({where: {id: userId}}).then(user => {
      return User.update({
         username,
